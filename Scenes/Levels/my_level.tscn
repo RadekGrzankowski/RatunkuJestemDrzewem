@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bssvun7258ccp"]
+[gd_scene load_steps=6 format=3 uid="uid://bssvun7258ccp"]
 
 [ext_resource type="Texture2D" uid="uid://b8m1qqhivxwea" path="res://Assets/placeholder1.png" id="1_ga0ca"]
+[ext_resource type="Script" path="res://OtherScripts/Timer.gd" id="2_a8mf8"]
 [ext_resource type="Texture2D" uid="uid://b3u7o4pg7wx2w" path="res://Assets/icon.svg" id="2_x6d2e"]
 [ext_resource type="Script" path="res://UI/Button.gd" id="3_8x1bp"]
 
@@ -15,6 +16,11 @@ offset_right = 317.0
 offset_bottom = 554.0
 scale = Vector2(2.32447, 5.44001)
 script = ExtResource("3_8x1bp")
+
+[node name="Timer" type="Timer" parent="Button"]
+wait_time = 2.613
+one_shot = true
+script = ExtResource("2_a8mf8")
 
 [node name="Placeholder1" type="Sprite2D" parent="."]
 position = Vector2(576, 325)
@@ -35,7 +41,7 @@ texture = ExtResource("2_x6d2e")
 [node name="Icon" type="Sprite2D" parent="."]
 modulate = Color(1, 0.301961, 1, 1)
 material = SubResource("CanvasItemMaterial_sv68v")
-position = Vector2(547, 218)
+position = Vector2(524, 214)
 texture = ExtResource("2_x6d2e")
 
 [node name="Icon5" type="Sprite2D" parent="."]
@@ -48,4 +54,18 @@ texture = ExtResource("2_x6d2e")
 position = Vector2(321, 593)
 texture = ExtResource("2_x6d2e")
 
+[node name="Icon7" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 0.0784314, 0.129412, 1)
+position = Vector2(580, 184)
+texture = ExtResource("2_x6d2e")
+
+[node name="Icon8" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.0823529, 1, 0.305882, 1)
+position = Vector2(603, 222)
+texture = ExtResource("2_x6d2e")
+
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="timeout" from="Button/Timer" to="Button" method="_on_timer_timeout"]
+[connection signal="timeout" from="Button/Timer" to="Button/Timer" method="_on_timeout"]
