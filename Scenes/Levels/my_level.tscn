@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://bssvun7258ccp"]
+[gd_scene load_steps=2 format=3 uid="uid://bssvun7258ccp"]
+
+[ext_resource type="Texture2D" uid="uid://b8m1qqhivxwea" path="res://Assets/placeholder1.png" id="1_ga0ca"]
 
 [node name="MyLevel" type="Node2D"]
+
+[node name="Placeholder1" type="Sprite2D" parent="."]
+position = Vector2(576, 325)
+texture = ExtResource("1_ga0ca")
