@@ -44,7 +44,7 @@ position = Vector2(603, 222)
 texture = ExtResource("2_x6d2e")
 
 [node name="Icon6" type="Sprite2D" parent="."]
-position = Vector2(327, 583)
+position = Vector2(321, 593)
 texture = ExtResource("2_x6d2e")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
