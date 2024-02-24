@@ -9,10 +9,11 @@
 [node name="MyLevel" type="Node2D"]
 
 [node name="Button" type="Button" parent="."]
-offset_left = 273.0
+offset_left = 275.0
 offset_top = 535.0
-offset_right = 380.0
-offset_bottom = 639.0
+offset_right = 317.0
+offset_bottom = 554.0
+scale = Vector2(2.32447, 5.44001)
 script = ExtResource("3_8x1bp")
 
 [node name="Placeholder1" type="Sprite2D" parent="."]
