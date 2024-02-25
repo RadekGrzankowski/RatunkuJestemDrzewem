@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8m1qqhivxwea"
-path="res://.godot/imported/placeholder1.png-389fa762197de30efd2a401d1f93e660.ctex"
+uid="uid://cek0ba6ai4331"
+path="res://.godot/imported/SmolTree1.png-2088527427d2eb858592f287d0ccb408.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placeholder1.png"
-dest_files=["res://.godot/imported/placeholder1.png-389fa762197de30efd2a401d1f93e660.ctex"]
+source_file="res://Assets/Placeholders/SmolTree1.png"
+dest_files=["res://.godot/imported/SmolTree1.png-2088527427d2eb858592f287d0ccb408.ctex"]
 
 [params]
 

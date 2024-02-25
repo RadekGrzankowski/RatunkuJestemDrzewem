@@ -1,15 +1,51 @@
-[gd_scene load_steps=6 format=3 uid="uid://bssvun7258ccp"]
+[gd_scene load_steps=9 format=3 uid="uid://bssvun7258ccp"]
 
-[ext_resource type="Texture2D" uid="uid://b8m1qqhivxwea" path="res://Assets/placeholder1.png" id="1_ga0ca"]
-[ext_resource type="Script" path="res://OtherScripts/Timer.gd" id="2_a8mf8"]
-[ext_resource type="Texture2D" uid="uid://b3u7o4pg7wx2w" path="res://Assets/icon.svg" id="2_x6d2e"]
-[ext_resource type="Script" path="res://UI/Button.gd" id="3_8x1bp"]
+[ext_resource type="Texture2D" uid="uid://b8m1qqhivxwea" path="res://Assets/Placeholders/placeholder1.png" id="1_ga0ca"]
+[ext_resource type="Script" path="res://OtherScripts/ButtonSun.gd" id="1_pbcqo"]
+[ext_resource type="Script" path="res://OtherScripts/ButtonRain.gd" id="1_pq68u"]
+[ext_resource type="Script" path="res://OtherScripts/ButtonRoot.gd" id="1_w6pl6"]
+[ext_resource type="Texture2D" uid="uid://b3u7o4pg7wx2w" path="res://Assets/Placeholders/icon.svg" id="2_x6d2e"]
+[ext_resource type="Script" path="res://OtherScripts/ButtonLeaf.gd" id="3_8x1bp"]
+[ext_resource type="Script" path="res://OtherScripts/AudioStreamPlayer.gd" id="5_m35lm"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sv68v"]
 
 [node name="MyLevel" type="Node2D"]
 
-[node name="Button" type="Button" parent="."]
+[node name="ButtonRain" type="Button" parent="."]
+offset_left = 800.0
+offset_top = 545.0
+offset_right = 908.0
+offset_bottom = 643.0
+script = ExtResource("1_pq68u")
+
+[node name="TimerRain" type="Timer" parent="ButtonRain"]
+wait_time = 10.0
+one_shot = true
+
+[node name="ButtonSun" type="Button" parent="."]
+offset_left = 611.0
+offset_top = 545.0
+offset_right = 714.0
+offset_bottom = 647.0
+script = ExtResource("1_pbcqo")
+
+[node name="TimerSun" type="Timer" parent="ButtonSun"]
+wait_time = 10.0
+one_shot = true
+
+[node name="ButtonRoot" type="Button" parent="."]
+offset_left = 423.0
+offset_top = 542.0
+offset_right = 523.0
+offset_bottom = 641.0
+script = ExtResource("1_w6pl6")
+
+[node name="TimerRoot" type="Timer" parent="ButtonRoot"]
+wait_time = 10.0
+one_shot = true
+
+[node name="ButtonLeaf" type="Button" parent="."]
 offset_left = 275.0
 offset_top = 535.0
 offset_right = 317.0
@@ -17,13 +53,12 @@ offset_bottom = 554.0
 scale = Vector2(2.32447, 5.44001)
 script = ExtResource("3_8x1bp")
 
-[node name="Timer" type="Timer" parent="Button"]
-wait_time = 2.613
+[node name="TimerLeaf" type="Timer" parent="ButtonLeaf"]
+wait_time = 10.0
 one_shot = true
-script = ExtResource("2_a8mf8")
 
 [node name="Placeholder1" type="Sprite2D" parent="."]
-position = Vector2(576, 325)
+position = Vector2(570, 330)
 texture = ExtResource("1_ga0ca")
 
 [node name="Icon2" type="Sprite2D" parent="."]
@@ -66,6 +101,36 @@ modulate = Color(0.0823529, 1, 0.305882, 1)
 position = Vector2(603, 222)
 texture = ExtResource("2_x6d2e")
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
-[connection signal="timeout" from="Button/Timer" to="Button" method="_on_timer_timeout"]
-[connection signal="timeout" from="Button/Timer" to="Button/Timer" method="_on_timeout"]
+[node name="Icon9" type="Sprite2D" parent="."]
+position = Vector2(547, 376)
+texture = ExtResource("2_x6d2e")
+
+[node name="Icon10" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(572, 397)
+texture = ExtResource("2_x6d2e")
+
+[node name="Icon11" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(608, 375)
+texture = ExtResource("2_x6d2e")
+
+[node name="Icon12" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(553, 349)
+texture = ExtResource("2_x6d2e")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("5_m35lm")
+
+[node name="Timer" type="Timer" parent="AudioStreamPlayer"]
+
+[connection signal="pressed" from="ButtonRain" to="ButtonRain" method="_on_pressed"]
+[connection signal="timeout" from="ButtonRain/TimerRain" to="ButtonRain" method="_on_timer_timeout"]
+[connection signal="pressed" from="ButtonSun" to="ButtonSun" method="_on_pressed"]
+[connection signal="timeout" from="ButtonSun/TimerSun" to="ButtonSun" method="_on_timer_timeout"]
+[connection signal="pressed" from="ButtonRoot" to="ButtonRoot" method="_on_pressed"]
+[connection signal="timeout" from="ButtonRoot/TimerRoot" to="ButtonRoot" method="_on_timer_timeout"]
+[connection signal="pressed" from="ButtonLeaf" to="ButtonLeaf" method="_on_pressed"]
+[connection signal="timeout" from="ButtonLeaf/TimerLeaf" to="ButtonLeaf" method="_on_timer_timeout"]
+[connection signal="timeout" from="ButtonLeaf/TimerLeaf" to="ButtonLeaf/TimerLeaf" method="_on_timeout"]

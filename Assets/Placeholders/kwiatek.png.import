@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbgfrcvnnhmx3"
-path="res://.godot/imported/korzen.png-fc995e8494d3f9e1755712eedd82dccb.ctex"
+uid="uid://clygfplw2huhq"
+path="res://.godot/imported/kwiatek.png-49075653ddce79fdd403e89c87b12ebd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/korzen.png"
-dest_files=["res://.godot/imported/korzen.png-fc995e8494d3f9e1755712eedd82dccb.ctex"]
+source_file="res://Assets/Placeholders/kwiatek.png"
+dest_files=["res://.godot/imported/kwiatek.png-49075653ddce79fdd403e89c87b12ebd.ctex"]
 
 [params]
 

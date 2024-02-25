@@ -14,7 +14,7 @@ func _process(delta):
 func _on_pressed():
 	if IsOnCooldown == false:
 		IsOnCooldown = true;
-		$Timer.start();
+		$TimerLeaf.start();
 		print("bonk");
 		if EvolutioLevel == 2:
 			$"../Icon7".visible = false;

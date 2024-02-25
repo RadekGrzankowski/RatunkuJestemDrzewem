@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bylwaoc3tunlc"
-path="res://.godot/imported/placeholder.png-139f8313a3b639ca21dd685b0d34f2d0.ctex"
+uid="uid://bniaapfsytu08"
+path="res://.godot/imported/kwiatek1.png-724c7fb2f4b79937e6d19f62c9b8bcc5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placeholder.png"
-dest_files=["res://.godot/imported/placeholder.png-139f8313a3b639ca21dd685b0d34f2d0.ctex"]
+source_file="res://Assets/Placeholders/kwiatek1.png"
+dest_files=["res://.godot/imported/kwiatek1.png-724c7fb2f4b79937e6d19f62c9b8bcc5.ctex"]
 
 [params]
 

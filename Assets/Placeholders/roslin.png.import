@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cek0ba6ai4331"
-path="res://.godot/imported/SmolTree1.png-0280ea44aede7aea8f68317bdd57b3b1.ctex"
+uid="uid://bul71ogutqf2i"
+path="res://.godot/imported/roslin.png-eacf0c7ba5aa35427622a0f2e4fb07ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/SmolTree1.png"
-dest_files=["res://.godot/imported/SmolTree1.png-0280ea44aede7aea8f68317bdd57b3b1.ctex"]
+source_file="res://Assets/Placeholders/roslin.png"
+dest_files=["res://.godot/imported/roslin.png-eacf0c7ba5aa35427622a0f2e4fb07ce.ctex"]
 
 [params]
 
