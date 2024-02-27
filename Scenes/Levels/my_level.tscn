@@ -149,65 +149,52 @@ modulate = Color(1, 1, 0, 1)
 position = Vector2(-104, 208)
 texture = ExtResource("2_x6d2e")
 
+[node name="Label" type="Label" parent="AnimationPlayer/PlaceholderSun"]
+offset_left = -63.0
+offset_top = -63.0
+offset_right = 62.0
+offset_bottom = 63.0
+text = "SUN :)"
+horizontal_alignment = 1
+
 [node name="PlaceholderRain" type="Sprite2D" parent="AnimationPlayer"]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(-104, 50)
 texture = ExtResource("2_x6d2e")
+
+[node name="Label" type="Label" parent="AnimationPlayer/PlaceholderRain"]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 63.0
+text = "RAIN"
+horizontal_alignment = 1
 
 [node name="PlaceholderWind" type="Sprite2D" parent="AnimationPlayer"]
 modulate = Color(0.823529, 0, 0.384314, 1)
 position = Vector2(1274, 45)
 texture = ExtResource("2_x6d2e")
 
+[node name="Label" type="Label" parent="AnimationPlayer/PlaceholderWind"]
+offset_left = -63.0
+offset_top = -64.0
+offset_right = 63.0
+offset_bottom = 63.0
+text = "WIND :O"
+horizontal_alignment = 1
+
 [node name="PlaceholderClouds" type="Sprite2D" parent="AnimationPlayer"]
 modulate = Color(0.435294, 0.411765, 0.423529, 1)
 position = Vector2(1270, 197)
 texture = ExtResource("2_x6d2e")
 
-[node name="ButtonRain" type="Button" parent="."]
-offset_left = 800.0
-offset_top = 545.0
-offset_right = 908.0
-offset_bottom = 643.0
-script = ExtResource("1_pq68u")
-
-[node name="TimerRain" type="Timer" parent="ButtonRain"]
-wait_time = 10.0
-one_shot = true
-
-[node name="ButtonSun" type="Button" parent="."]
-offset_left = 611.0
-offset_top = 545.0
-offset_right = 714.0
-offset_bottom = 647.0
-script = ExtResource("1_pbcqo")
-
-[node name="TimerSun" type="Timer" parent="ButtonSun"]
-wait_time = 10.0
-one_shot = true
-
-[node name="ButtonRoot" type="Button" parent="."]
-offset_left = 423.0
-offset_top = 542.0
-offset_right = 523.0
-offset_bottom = 641.0
-script = ExtResource("1_w6pl6")
-
-[node name="TimerRoot" type="Timer" parent="ButtonRoot"]
-wait_time = 10.0
-one_shot = true
-
-[node name="ButtonLeaf" type="Button" parent="."]
-offset_left = 275.0
-offset_top = 535.0
-offset_right = 317.0
-offset_bottom = 554.0
-scale = Vector2(2.32447, 5.44001)
-script = ExtResource("3_8x1bp")
-
-[node name="TimerLeaf" type="Timer" parent="ButtonLeaf"]
-wait_time = 10.0
-one_shot = true
+[node name="Label" type="Label" parent="AnimationPlayer/PlaceholderClouds"]
+offset_left = -62.0
+offset_top = -63.0
+offset_right = 64.0
+offset_bottom = 64.0
+text = "CLOUDS"
+horizontal_alignment = 1
 
 [node name="Placeholder1" type="Sprite2D" parent="."]
 position = Vector2(577, 334)
@@ -231,11 +218,27 @@ material = SubResource("CanvasItemMaterial_sv68v")
 position = Vector2(524, 214)
 texture = ExtResource("2_x6d2e")
 
+[node name="Label" type="Label" parent="Icon"]
+offset_left = -62.0
+offset_top = -63.0
+offset_right = 63.0
+offset_bottom = 63.0
+text = "LEAF "
+horizontal_alignment = 1
+
 [node name="Icon5" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(1, 1, 0.305882, 1)
 position = Vector2(603, 222)
 texture = ExtResource("2_x6d2e")
+
+[node name="Label" type="Label" parent="Icon5"]
+offset_left = -62.0
+offset_top = -63.0
+offset_right = 64.0
+offset_bottom = 64.0
+text = "LEAF LVL 1"
+horizontal_alignment = 1
 
 [node name="Icon6" type="Sprite2D" parent="."]
 position = Vector2(321, 593)
@@ -247,30 +250,132 @@ modulate = Color(1, 0.0784314, 0.129412, 1)
 position = Vector2(580, 184)
 texture = ExtResource("2_x6d2e")
 
+[node name="Label" type="Label" parent="Icon7"]
+offset_left = -61.0
+offset_top = -63.0
+offset_right = 64.0
+offset_bottom = 64.0
+text = "LEAF LVL 2"
+horizontal_alignment = 1
+
 [node name="Icon8" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(0.0823529, 1, 0.305882, 1)
-position = Vector2(603, 222)
+position = Vector2(601, 223)
 texture = ExtResource("2_x6d2e")
+
+[node name="Label" type="Label" parent="Icon8"]
+offset_left = -62.0
+offset_top = -64.0
+offset_right = 63.0
+offset_bottom = 65.0
+text = "LEAF LVL 3"
+horizontal_alignment = 1
 
 [node name="Icon9" type="Sprite2D" parent="."]
 position = Vector2(547, 376)
 texture = ExtResource("2_x6d2e")
+
+[node name="Label" type="Label" parent="Icon9"]
+offset_left = -63.0
+offset_top = -63.0
+offset_right = 63.0
+offset_bottom = 64.0
+size_flags_horizontal = 4
+text = "ROOT "
+horizontal_alignment = 1
 
 [node name="Icon10" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(572, 397)
 texture = ExtResource("2_x6d2e")
 
+[node name="Label" type="Label" parent="Icon10"]
+offset_left = -63.0
+offset_top = -63.0
+offset_right = 62.0
+offset_bottom = 62.0
+text = "ROOT LVL 1"
+horizontal_alignment = 1
+
 [node name="Icon11" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(608, 375)
 texture = ExtResource("2_x6d2e")
 
+[node name="Label" type="Label" parent="Icon11"]
+offset_left = -62.0
+offset_top = -63.0
+offset_right = 64.0
+offset_bottom = 63.0
+text = "ROOT LVL 2"
+horizontal_alignment = 1
+
 [node name="Icon12" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(553, 349)
 texture = ExtResource("2_x6d2e")
+
+[node name="Label" type="Label" parent="Icon12"]
+offset_left = -63.0
+offset_top = -63.0
+offset_right = 64.0
+offset_bottom = 62.0
+text = "ROOT LVL 3"
+horizontal_alignment = 1
+
+[node name="ButtonRain" type="Button" parent="."]
+offset_left = 805.0
+offset_top = 545.0
+offset_right = 905.0
+offset_bottom = 645.0
+text = "HYDRO
+GENESIS"
+script = ExtResource("1_pq68u")
+
+[node name="TimerRain" type="Timer" parent="ButtonRain"]
+wait_time = 10.0
+one_shot = true
+
+[node name="ButtonSun" type="Button" parent="."]
+offset_left = 613.0
+offset_top = 542.0
+offset_right = 716.0
+offset_bottom = 644.0
+text = "PHOTO
+SYNTHESIS"
+script = ExtResource("1_pbcqo")
+
+[node name="TimerSun" type="Timer" parent="ButtonSun"]
+wait_time = 10.0
+one_shot = true
+
+[node name="ButtonRoot" type="Button" parent="."]
+offset_left = 423.0
+offset_top = 542.0
+offset_right = 523.0
+offset_bottom = 641.0
+text = "UPGRADE
+ROOT"
+script = ExtResource("1_w6pl6")
+
+[node name="TimerRoot" type="Timer" parent="ButtonRoot"]
+wait_time = 10.0
+one_shot = true
+
+[node name="ButtonLeaf" type="Button" parent="."]
+offset_left = 271.0
+offset_top = 541.0
+offset_right = 371.0
+offset_bottom = 641.0
+size_flags_horizontal = 0
+text = "UPGRADE 
+LEAF"
+script = ExtResource("3_8x1bp")
+
+[node name="TimerLeaf" type="Timer" parent="ButtonLeaf"]
+wait_time = 10.0
+one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 script = ExtResource("5_m35lm")
