@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://bssvun7258ccp"]
+[gd_scene load_steps=66 format=3 uid="uid://bssvun7258ccp"]
 
 [ext_resource type="Script" path="res://OtherScripts/AnimationPlayer.gd" id="1_36a1c"]
 [ext_resource type="Script" path="res://OtherScripts/ButtonSun.gd" id="1_pbcqo"]
@@ -50,6 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://cfgi6ep4cnke7" path="res://Assets/Weather/Cloud.png" id="42_goovd"]
 [ext_resource type="Script" path="res://OtherScripts/GrowRootText.gd" id="42_wd7t5"]
 [ext_resource type="Script" path="res://OtherScripts/GrowLeafText.gd" id="45_5w47a"]
+[ext_resource type="Script" path="res://OtherScripts/Narrative.gd" id="51_2bsok"]
 
 [sub_resource type="Animation" id="Animation_ekmdh"]
 length = 0.001
@@ -385,7 +386,7 @@ position = Vector2(0, -3)
 libraries = {
 "": SubResource("AnimationLibrary_4obxu")
 }
-speed_scale = 4.0
+speed_scale = 2.0
 script = ExtResource("1_36a1c")
 
 [node name="PlaceholderSun" type="Sprite2D" parent="AnimationPlayer"]
@@ -501,7 +502,7 @@ WATER"
 script = ExtResource("1_pq68u")
 
 [node name="TimerRain" type="Timer" parent="ButtonRain"]
-wait_time = 10.0
+wait_time = 60.0
 one_shot = true
 
 [node name="LabelRain" type="Label" parent="ButtonRain/TimerRain"]
@@ -531,7 +532,7 @@ SYNTHESIS"
 script = ExtResource("1_pbcqo")
 
 [node name="TimerSun" type="Timer" parent="ButtonSun"]
-wait_time = 10.0
+wait_time = 60.0
 one_shot = true
 
 [node name="LabelSun" type="Label" parent="ButtonSun/TimerSun"]
@@ -561,7 +562,7 @@ ROOT"
 script = ExtResource("1_w6pl6")
 
 [node name="TimerRoot" type="Timer" parent="ButtonRoot"]
-wait_time = 10.0
+wait_time = 60.0
 one_shot = true
 
 [node name="LabelRoot" type="Label" parent="ButtonRoot/TimerRoot"]
@@ -592,7 +593,7 @@ LEAF"
 script = ExtResource("3_8x1bp")
 
 [node name="TimerLeaf" type="Timer" parent="ButtonLeaf"]
-wait_time = 10.0
+wait_time = 60.0
 one_shot = true
 
 [node name="LabelLeaf" type="Label" parent="ButtonLeaf/TimerLeaf"]
@@ -677,6 +678,7 @@ offset_left = 50.0
 offset_top = 355.0
 offset_right = 90.0
 offset_bottom = 378.0
+theme_override_font_sizes/font_size = 14
 text = "The Sun is here! It's really hot 
 and mad for some reason!
 Your Photosyntesis and 
@@ -689,6 +691,7 @@ offset_left = 50.0
 offset_top = 355.0
 offset_right = 90.0
 offset_bottom = 378.0
+theme_override_font_sizes/font_size = 14
 text = "The Rain is here! It softens and 
 provides life to the ground. Your
 Absorb Water and Upgrade Root 
@@ -700,6 +703,7 @@ offset_left = 890.0
 offset_top = 355.0
 offset_right = 1150.0
 offset_bottom = 456.0
+theme_override_font_sizes/font_size = 14
 text = "The Wind is here! The ground got 
 dry and it's really windy! Your 
 Upgrade Leaf and Absorb Water
@@ -711,11 +715,30 @@ offset_left = 890.0
 offset_top = 355.0
 offset_right = 930.0
 offset_bottom = 378.0
+theme_override_font_sizes/font_size = 14
 text = "The Clouds are here! It's getting
 really dark and gloomy. Your 
 Photosyntesis and Upgrade Root
 actions have increased cooldown!"
 
+[node name="GameOver" type="Label" parent="."]
+visible = false
+offset_left = 400.0
+offset_top = 135.0
+offset_right = 705.0
+offset_bottom = 184.0
+text = "GAME OVER! THANK YOU FOR PLAYING!
+(You have to Alt+F4 to close for now)"
+
+[node name="Narrative" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 210.0
+offset_right = 387.0
+offset_bottom = 343.0
+autowrap_mode = 3
+script = ExtResource("51_2bsok")
+
+[connection signal="animation_changed" from="AnimationPlayer" to="Narrative" method="_on_animation_player_animation_changed"]
 [connection signal="animation_started" from="AnimationPlayer" to="AnimationPlayer" method="_on_animation_started"]
 [connection signal="mouse_entered" from="ButtonRain" to="ButtonRain/TimerRain/CollectWaterText" method="_on_button_rain_mouse_entered"]
 [connection signal="mouse_exited" from="ButtonRain" to="ButtonRain/TimerRain/CollectWaterText" method="_on_button_rain_mouse_exited"]
