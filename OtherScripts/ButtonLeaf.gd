@@ -15,7 +15,6 @@ func _on_pressed():
 	if IsOnCooldown == false:
 		IsOnCooldown = true;
 		$TimerLeaf.start();
-		print("bonk");
 		if EvolutioLevel == 2:
 			$"../Icon7".visible = false;
 			$"../Icon8".visible = true;
@@ -28,10 +27,7 @@ func _on_pressed():
 			$"../Icon".visible = false;
 			$"../Icon5".visible = true;
 			EvolutioLevel = EvolutioLevel + 1;
-	else:
-		print("is on cooldown");
 
 
 func _on_timer_timeout():
-	print ("dziala");
 	IsOnCooldown = false;

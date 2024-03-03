@@ -19,7 +19,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	print($"../ButtonSun/TimerSun".get_time_left());
 	var old_name = get_current_animation();
 	if old_name == "WeatherSun":
 		if IsSunEffectApplied == false:

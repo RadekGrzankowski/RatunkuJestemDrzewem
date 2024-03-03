@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://bssvun7258ccp"]
+[gd_scene load_steps=68 format=3 uid="uid://bssvun7258ccp"]
 
 [ext_resource type="Script" path="res://OtherScripts/AnimationPlayer.gd" id="1_36a1c"]
 [ext_resource type="Script" path="res://OtherScripts/ButtonSun.gd" id="1_pbcqo"]
@@ -51,6 +51,8 @@
 [ext_resource type="Script" path="res://OtherScripts/GrowRootText.gd" id="42_wd7t5"]
 [ext_resource type="Script" path="res://OtherScripts/GrowLeafText.gd" id="45_5w47a"]
 [ext_resource type="Script" path="res://OtherScripts/Narrative.gd" id="51_2bsok"]
+[ext_resource type="Texture2D" uid="uid://b4mvb1vyvrr2b" path="res://Assets/Tilesets/Droplet.png" id="52_7pwiv"]
+[ext_resource type="Texture2D" uid="uid://chnjhhvhkas4j" path="res://Assets/Tilesets/SunBeam.png" id="53_o6bee"]
 
 [sub_resource type="Animation" id="Animation_ekmdh"]
 length = 0.001
@@ -393,6 +395,7 @@ script = ExtResource("1_36a1c")
 position = Vector2(-104, 208)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimationPlayer/PlaceholderSun"]
+z_index = -1
 position = Vector2(1, -3)
 sprite_frames = SubResource("SpriteFrames_qh5a3")
 autoplay = "default"
@@ -404,6 +407,7 @@ position = Vector2(-510, 109)
 texture = ExtResource("2_x6d2e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimationPlayer/PlaceholderRain"]
+z_index = -1
 sprite_frames = SubResource("SpriteFrames_bugjp")
 autoplay = "default"
 frame_progress = 0.353129
@@ -414,6 +418,7 @@ position = Vector2(1274, 45)
 texture = ExtResource("2_x6d2e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimationPlayer/PlaceholderWind"]
+z_index = -1
 position = Vector2(185.5, 111)
 scale = Vector2(4.86458, 3.3125)
 sprite_frames = SubResource("SpriteFrames_68cah")
@@ -422,6 +427,7 @@ frame_progress = 0.176081
 flip_h = true
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="AnimationPlayer/PlaceholderWind"]
+z_index = -1
 position = Vector2(343, 242)
 scale = Vector2(4.86458, 3.3125)
 sprite_frames = SubResource("SpriteFrames_68cah")
@@ -430,6 +436,7 @@ frame_progress = 0.768507
 flip_h = true
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="AnimationPlayer/PlaceholderWind"]
+z_index = -1
 position = Vector2(386, -31)
 scale = Vector2(4.86458, 3.3125)
 sprite_frames = SubResource("SpriteFrames_68cah")
@@ -438,16 +445,19 @@ frame_progress = 0.287629
 flip_h = true
 
 [node name="PlaceholderClouds" type="Sprite2D" parent="AnimationPlayer"]
+z_index = 1
 position = Vector2(1315, 224)
 scale = Vector2(2.48958, 1.92708)
 texture = ExtResource("7_k5fe3")
 
 [node name="PlaceholderClouds2" type="Sprite2D" parent="AnimationPlayer/PlaceholderClouds"]
+z_index = -1
 position = Vector2(61.4561, -47.2216)
 texture = ExtResource("7_k5fe3")
 flip_h = true
 
 [node name="PlaceholderClouds3" type="Sprite2D" parent="AnimationPlayer/PlaceholderClouds"]
+z_index = -1
 position = Vector2(93.1883, 3.11351)
 texture = ExtResource("7_k5fe3")
 flip_h = true
@@ -519,7 +529,7 @@ offset_top = 497.0
 offset_right = 1093.0
 offset_bottom = 546.0
 text = "Collects the rain 
-from around the area."
+from around the area. "
 script = ExtResource("36_2ores")
 
 [node name="ButtonSun" type="Button" parent="."]
@@ -631,43 +641,51 @@ scale = Vector2(12.25, 3.79167)
 texture = ExtResource("26_p45cd")
 
 [node name="Cloud" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(73, 68)
 texture = ExtResource("42_goovd")
 
 [node name="Cloud7" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(589, 34)
 scale = Vector2(0.635417, 0.604167)
 texture = ExtResource("42_goovd")
 
 [node name="Cloud8" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(991, 104)
 scale = Vector2(0.635417, 0.604167)
 texture = ExtResource("42_goovd")
 flip_h = true
 
 [node name="Cloud2" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(289, 16)
 scale = Vector2(1.33333, 1.16667)
 texture = ExtResource("42_goovd")
 flip_h = true
 
 [node name="Cloud3" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(476, 77)
 scale = Vector2(1.35417, 1)
 texture = ExtResource("42_goovd")
 flip_h = true
 
 [node name="Cloud4" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(813, 0)
 scale = Vector2(1.5, 1)
 texture = ExtResource("42_goovd")
 
 [node name="Cloud5" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(1153, 21)
 scale = Vector2(1.16667, 1.04167)
 texture = ExtResource("42_goovd")
 
 [node name="Cloud6" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(922, 163)
 scale = Vector2(1.47917, 1)
 texture = ExtResource("42_goovd")
@@ -738,6 +756,194 @@ offset_bottom = 343.0
 autowrap_mode = 3
 script = ExtResource("51_2bsok")
 
+[node name="Rain0" type="Button" parent="."]
+visible = false
+offset_left = 322.0
+offset_top = 386.0
+offset_right = 348.0
+offset_bottom = 412.0
+
+[node name="Droplet" type="Sprite2D" parent="Rain0"]
+position = Vector2(13, 13)
+scale = Vector2(0.260417, 0.260417)
+texture = ExtResource("52_7pwiv")
+
+[node name="Rain1" type="Button" parent="."]
+visible = false
+offset_left = 384.0
+offset_top = 442.0
+offset_right = 410.0
+offset_bottom = 468.0
+
+[node name="Droplet2" type="Sprite2D" parent="Rain1"]
+position = Vector2(13, 13)
+scale = Vector2(0.260417, 0.260417)
+texture = ExtResource("52_7pwiv")
+
+[node name="Rain2" type="Button" parent="."]
+visible = false
+offset_left = 450.0
+offset_top = 471.0
+offset_right = 476.0
+offset_bottom = 497.0
+
+[node name="Droplet3" type="Sprite2D" parent="Rain2"]
+position = Vector2(13, 13)
+scale = Vector2(0.260417, 0.260417)
+texture = ExtResource("52_7pwiv")
+
+[node name="Rain3" type="Button" parent="."]
+visible = false
+offset_left = 540.0
+offset_top = 469.0
+offset_right = 566.0
+offset_bottom = 495.0
+
+[node name="Droplet4" type="Sprite2D" parent="Rain3"]
+position = Vector2(13, 13)
+scale = Vector2(0.260417, 0.260417)
+texture = ExtResource("52_7pwiv")
+
+[node name="Rain4" type="Button" parent="."]
+visible = false
+offset_left = 608.0
+offset_top = 460.0
+offset_right = 634.0
+offset_bottom = 486.0
+
+[node name="Droplet5" type="Sprite2D" parent="Rain4"]
+position = Vector2(13, 13)
+scale = Vector2(0.260417, 0.260417)
+texture = ExtResource("52_7pwiv")
+
+[node name="Rain5" type="Button" parent="."]
+visible = false
+offset_left = 679.0
+offset_top = 447.0
+offset_right = 705.0
+offset_bottom = 473.0
+
+[node name="Droplet6" type="Sprite2D" parent="Rain5"]
+position = Vector2(13, 13)
+scale = Vector2(0.260417, 0.260417)
+texture = ExtResource("52_7pwiv")
+
+[node name="Rain6" type="Button" parent="."]
+visible = false
+offset_left = 737.0
+offset_top = 398.0
+offset_right = 763.0
+offset_bottom = 424.0
+
+[node name="Droplet7" type="Sprite2D" parent="Rain6"]
+position = Vector2(13, 13)
+scale = Vector2(0.260417, 0.260417)
+texture = ExtResource("52_7pwiv")
+
+[node name="Sun0" type="Button" parent="."]
+visible = false
+offset_left = 397.0
+offset_top = 291.0
+offset_right = 423.0
+offset_bottom = 317.0
+
+[node name="SunBeam" type="Sprite2D" parent="Sun0"]
+position = Vector2(12, 14)
+scale = Vector2(0.34375, 0.364583)
+texture = ExtResource("53_o6bee")
+
+[node name="Sun1" type="Button" parent="."]
+visible = false
+offset_left = 444.0
+offset_top = 177.0
+offset_right = 470.0
+offset_bottom = 203.0
+
+[node name="SunBeam2" type="Sprite2D" parent="Sun1"]
+position = Vector2(14, 12)
+scale = Vector2(0.34375, 0.364583)
+texture = ExtResource("53_o6bee")
+
+[node name="Sun2" type="Button" parent="."]
+visible = false
+offset_left = 432.0
+offset_top = 325.0
+offset_right = 458.0
+offset_bottom = 351.0
+
+[node name="SunBeam3" type="Sprite2D" parent="Sun2"]
+position = Vector2(14, 11)
+scale = Vector2(0.34375, 0.364583)
+texture = ExtResource("53_o6bee")
+
+[node name="Sun3" type="Button" parent="."]
+visible = false
+offset_left = 633.0
+offset_top = 288.0
+offset_right = 659.0
+offset_bottom = 314.0
+
+[node name="SunBeam4" type="Sprite2D" parent="Sun3"]
+position = Vector2(11, 13)
+scale = Vector2(0.34375, 0.364583)
+texture = ExtResource("53_o6bee")
+
+[node name="Sun4" type="Button" parent="."]
+visible = false
+offset_left = 655.0
+offset_top = 223.0
+offset_right = 681.0
+offset_bottom = 249.0
+
+[node name="SunBeam5" type="Sprite2D" parent="Sun4"]
+position = Vector2(12, 11)
+scale = Vector2(0.34375, 0.364583)
+texture = ExtResource("53_o6bee")
+
+[node name="Sun5" type="Button" parent="."]
+visible = false
+offset_left = 753.0
+offset_top = 275.0
+offset_right = 779.0
+offset_bottom = 301.0
+
+[node name="SunBeam6" type="Sprite2D" parent="Sun5"]
+position = Vector2(13, 13)
+scale = Vector2(0.34375, 0.364583)
+texture = ExtResource("53_o6bee")
+
+[node name="Sun6" type="Button" parent="."]
+visible = false
+offset_left = 925.0
+offset_top = 289.0
+offset_right = 951.0
+offset_bottom = 315.0
+
+[node name="SunBeam7" type="Sprite2D" parent="Sun6"]
+position = Vector2(13, 13)
+scale = Vector2(0.34375, 0.364583)
+texture = ExtResource("53_o6bee")
+
+[node name="NotificationTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="RootNotify" type="Label" parent="NotificationTimer"]
+offset_left = 368.0
+offset_top = 461.0
+offset_right = 933.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 12
+text = "Your Upgrade Root cooldown will be reduced if you use it during this day!"
+
+[node name="LeafNotify" type="Label" parent="NotificationTimer"]
+offset_left = 369.0
+offset_top = 478.0
+offset_right = 931.0
+offset_bottom = 501.0
+theme_override_font_sizes/font_size = 12
+text = "Your Upgrade Leaf cooldown will be reduced if you use it during this day!"
+
 [connection signal="animation_changed" from="AnimationPlayer" to="Narrative" method="_on_animation_player_animation_changed"]
 [connection signal="animation_started" from="AnimationPlayer" to="AnimationPlayer" method="_on_animation_started"]
 [connection signal="mouse_entered" from="ButtonRain" to="ButtonRain/TimerRain/CollectWaterText" method="_on_button_rain_mouse_entered"]
@@ -757,3 +963,19 @@ script = ExtResource("51_2bsok")
 [connection signal="pressed" from="ButtonLeaf" to="ButtonLeaf" method="_on_pressed"]
 [connection signal="timeout" from="ButtonLeaf/TimerLeaf" to="ButtonLeaf" method="_on_timer_timeout"]
 [connection signal="timeout" from="ButtonLeaf/TimerLeaf" to="ButtonLeaf/TimerLeaf" method="_on_timeout"]
+[connection signal="pressed" from="Rain0" to="ButtonRain" method="_on_rain_0_pressed"]
+[connection signal="pressed" from="Rain1" to="ButtonRain" method="_on_rain_1_pressed"]
+[connection signal="pressed" from="Rain2" to="ButtonRain" method="_on_rain_2_pressed"]
+[connection signal="pressed" from="Rain3" to="ButtonRain" method="_on_rain_3_pressed"]
+[connection signal="pressed" from="Rain4" to="ButtonRain" method="_on_rain_4_pressed"]
+[connection signal="pressed" from="Rain5" to="ButtonRain" method="_on_rain_5_pressed"]
+[connection signal="pressed" from="Rain6" to="ButtonRain" method="_on_rain_6_pressed"]
+[connection signal="pressed" from="Sun0" to="ButtonSun" method="_on_sun_0_pressed"]
+[connection signal="pressed" from="Sun1" to="ButtonSun" method="_on_sun_1_pressed"]
+[connection signal="pressed" from="Sun2" to="ButtonSun" method="_on_sun_2_pressed"]
+[connection signal="pressed" from="Sun3" to="ButtonSun" method="_on_sun_3_pressed"]
+[connection signal="pressed" from="Sun4" to="ButtonSun" method="_on_sun_4_pressed"]
+[connection signal="pressed" from="Sun5" to="ButtonSun" method="_on_sun_5_pressed"]
+[connection signal="pressed" from="Sun6" to="ButtonSun" method="_on_sun_6_pressed"]
+[connection signal="timeout" from="NotificationTimer" to="ButtonRain" method="_on_notification_timer_timeout"]
+[connection signal="timeout" from="NotificationTimer" to="ButtonSun" method="_on_notification_timer_timeout"]
