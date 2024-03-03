@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://bssvun7258ccp"]
+[gd_scene load_steps=65 format=3 uid="uid://bssvun7258ccp"]
 
 [ext_resource type="Script" path="res://OtherScripts/AnimationPlayer.gd" id="1_36a1c"]
 [ext_resource type="Script" path="res://OtherScripts/ButtonSun.gd" id="1_pbcqo"]
@@ -41,11 +41,15 @@
 [ext_resource type="Texture2D" uid="uid://clobmdlxqx7as" path="res://Assets/Roots/Roots - stage 3.png" id="32_7b540"]
 [ext_resource type="Texture2D" uid="uid://cvsb40rpqhasb" path="res://Assets/Roots/Roots - stage 4.png" id="33_635ld"]
 [ext_resource type="Script" path="res://OtherScripts/LabelRain.gd" id="35_7ypf3"]
+[ext_resource type="Script" path="res://OtherScripts/LabelRainFlavorText.gd" id="36_2ores"]
 [ext_resource type="Script" path="res://OtherScripts/LabelSun.gd" id="37_wiqeg"]
+[ext_resource type="Script" path="res://OtherScripts/CollectSunText.gd" id="39_m42fn"]
 [ext_resource type="Script" path="res://OtherScripts/LabelRoot.gd" id="39_yhxpf"]
 [ext_resource type="Script" path="res://OtherScripts/LabelLeaf.gd" id="41_b40md"]
 [ext_resource type="Texture2D" uid="uid://crlvn4u8ly0wu" path="res://Assets/Weather/Clouds - skybox.png" id="41_p1r8f"]
 [ext_resource type="Texture2D" uid="uid://cfgi6ep4cnke7" path="res://Assets/Weather/Cloud.png" id="42_goovd"]
+[ext_resource type="Script" path="res://OtherScripts/GrowRootText.gd" id="42_wd7t5"]
+[ext_resource type="Script" path="res://OtherScripts/GrowLeafText.gd" id="45_5w47a"]
 
 [sub_resource type="Animation" id="Animation_ekmdh"]
 length = 0.001
@@ -507,6 +511,16 @@ offset_right = 892.0
 offset_bottom = 586.0
 script = ExtResource("35_7ypf3")
 
+[node name="CollectWaterText" type="Label" parent="ButtonRain/TimerRain"]
+visible = false
+offset_left = 792.0
+offset_top = 497.0
+offset_right = 1093.0
+offset_bottom = 546.0
+text = "Collects the rain 
+from around the area."
+script = ExtResource("36_2ores")
+
 [node name="ButtonSun" type="Button" parent="."]
 offset_left = 612.0
 offset_top = 546.0
@@ -526,6 +540,16 @@ offset_top = 549.0
 offset_right = 701.0
 offset_bottom = 572.0
 script = ExtResource("37_wiqeg")
+
+[node name="CollectSunText" type="Label" parent="ButtonSun/TimerSun"]
+visible = false
+offset_left = 612.0
+offset_top = 495.0
+offset_right = 702.0
+offset_bottom = 544.0
+text = "Collects the 
+sun beams."
+script = ExtResource("39_m42fn")
 
 [node name="ButtonRoot" type="Button" parent="."]
 offset_left = 440.0
@@ -547,6 +571,16 @@ offset_right = 514.0
 offset_bottom = 571.0
 script = ExtResource("39_yhxpf")
 
+[node name="GrowRootText" type="Label" parent="ButtonRoot/TimerRoot"]
+visible = false
+offset_left = 441.0
+offset_top = 496.0
+offset_right = 530.0
+offset_bottom = 545.0
+text = "Upgrades 
+Your Roots."
+script = ExtResource("42_wd7t5")
+
 [node name="ButtonLeaf" type="Button" parent="."]
 offset_left = 271.0
 offset_top = 547.0
@@ -567,6 +601,16 @@ offset_top = 548.0
 offset_right = 346.0
 offset_bottom = 571.0
 script = ExtResource("41_b40md")
+
+[node name="GrowLeafText" type="Label" parent="ButtonLeaf/TimerLeaf"]
+visible = false
+offset_left = 273.0
+offset_top = 498.0
+offset_right = 370.0
+offset_bottom = 547.0
+text = "Upgrades 
+Your Flower."
+script = ExtResource("45_5w47a")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 script = ExtResource("5_m35lm")
@@ -627,13 +671,66 @@ position = Vector2(922, 163)
 scale = Vector2(1.47917, 1)
 texture = ExtResource("42_goovd")
 
+[node name="SunText" type="Label" parent="."]
+visible = false
+offset_left = 50.0
+offset_top = 355.0
+offset_right = 90.0
+offset_bottom = 378.0
+text = "The Sun is here! It's really hot 
+and mad for some reason!
+Your Photosyntesis and 
+Upgrade Leaf actions have
+reduced cooldowns!"
+
+[node name="RainText" type="Label" parent="."]
+visible = false
+offset_left = 50.0
+offset_top = 355.0
+offset_right = 90.0
+offset_bottom = 378.0
+text = "The Rain is here! It softens and 
+provides life to the ground. Your
+Absorb Water and Upgrade Root 
+actions have reduced cooldowns!"
+
+[node name="WindText" type="Label" parent="."]
+visible = false
+offset_left = 890.0
+offset_top = 355.0
+offset_right = 1150.0
+offset_bottom = 456.0
+text = "The Wind is here! The ground got 
+dry and it's really windy! Your 
+Upgrade Leaf and Absorb Water
+actions have increased cooldown!"
+
+[node name="CloudsText" type="Label" parent="."]
+visible = false
+offset_left = 890.0
+offset_top = 355.0
+offset_right = 930.0
+offset_bottom = 378.0
+text = "The Clouds are here! It's getting
+really dark and gloomy. Your 
+Photosyntesis and Upgrade Root
+actions have increased cooldown!"
+
 [connection signal="animation_started" from="AnimationPlayer" to="AnimationPlayer" method="_on_animation_started"]
+[connection signal="mouse_entered" from="ButtonRain" to="ButtonRain/TimerRain/CollectWaterText" method="_on_button_rain_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonRain" to="ButtonRain/TimerRain/CollectWaterText" method="_on_button_rain_mouse_exited"]
 [connection signal="pressed" from="ButtonRain" to="ButtonRain" method="_on_pressed"]
 [connection signal="timeout" from="ButtonRain/TimerRain" to="ButtonRain" method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="ButtonSun" to="ButtonSun/TimerSun/CollectSunText" method="_on_button_sun_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonSun" to="ButtonSun/TimerSun/CollectSunText" method="_on_button_sun_mouse_exited"]
 [connection signal="pressed" from="ButtonSun" to="ButtonSun" method="_on_pressed"]
 [connection signal="timeout" from="ButtonSun/TimerSun" to="ButtonSun" method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="ButtonRoot" to="ButtonRoot/TimerRoot/GrowRootText" method="_on_button_root_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonRoot" to="ButtonRoot/TimerRoot/GrowRootText" method="_on_button_root_mouse_exited"]
 [connection signal="pressed" from="ButtonRoot" to="ButtonRoot" method="_on_pressed"]
 [connection signal="timeout" from="ButtonRoot/TimerRoot" to="ButtonRoot" method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="ButtonLeaf" to="ButtonLeaf/TimerLeaf/GrowLeafText" method="_on_button_leaf_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonLeaf" to="ButtonLeaf/TimerLeaf/GrowLeafText" method="_on_button_leaf_mouse_exited"]
 [connection signal="pressed" from="ButtonLeaf" to="ButtonLeaf" method="_on_pressed"]
 [connection signal="timeout" from="ButtonLeaf/TimerLeaf" to="ButtonLeaf" method="_on_timer_timeout"]
 [connection signal="timeout" from="ButtonLeaf/TimerLeaf" to="ButtonLeaf/TimerLeaf" method="_on_timeout"]

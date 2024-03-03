@@ -33,6 +33,10 @@ func _process(delta):
 			IsWindEffectApplied = false;
 			$"../ButtonRain/TimerRain".set_wait_time(FixedTimerValue)
 			$"../ButtonRoot/TimerRoot".set_wait_time(FixedTimerValue)
+			$"../SunText".set_visible(true);
+			$"../RainText".set_visible(false);
+			$"../WindText".set_visible(false);
+			$"../CloudsText".set_visible(false);
 	if old_name == "WeatherRain":
 		if IsRainEffectApplied == false:
 			IsRainEffectApplied = true;
@@ -42,6 +46,10 @@ func _process(delta):
 			IsWindEffectApplied = false;
 			$"../ButtonSun/TimerSun".set_wait_time(FixedTimerValue)
 			$"../ButtonLeaf/TimerLeaf".set_wait_time(FixedTimerValue)
+			$"../SunText".set_visible(false);
+			$"../RainText".set_visible(true);
+			$"../WindText".set_visible(false);
+			$"../CloudsText".set_visible(false);
 	if old_name == "WeatherWind":
 		if IsWindEffectApplied == false:
 			IsWindEffectApplied = true;
@@ -51,6 +59,10 @@ func _process(delta):
 			IsRainEffectApplied = false;
 			$"../ButtonSun/TimerSun".set_wait_time(FixedTimerValue)
 			$"../ButtonRoot/TimerRoot".set_wait_time(FixedTimerValue)
+			$"../SunText".set_visible(false);
+			$"../RainText".set_visible(false);
+			$"../WindText".set_visible(true);
+			$"../CloudsText".set_visible(false);
 	if old_name == "WeatherClouds":
 		if IsCloudsEffectApplied == false:
 			IsCloudsEffectApplied = true;
@@ -60,6 +72,10 @@ func _process(delta):
 			IsRainEffectApplied = false;
 			$"../ButtonRain/TimerRain".set_wait_time(FixedTimerValue)
 			$"../ButtonLeaf/TimerLeaf".set_wait_time(FixedTimerValue)
+			$"../SunText".set_visible(false);
+			$"../RainText".set_visible(false);
+			$"../WindText".set_visible(false);
+			$"../CloudsText".set_visible(true);
 
 	
 
