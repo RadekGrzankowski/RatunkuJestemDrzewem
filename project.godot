@@ -14,3 +14,7 @@ config/name="IAMGROOT"
 run/main_scene="res://Scenes/Levels/my_level.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://Assets/Placeholders/icon.svg"
+
+[display]
+
+window/stretch/mode="viewport"
