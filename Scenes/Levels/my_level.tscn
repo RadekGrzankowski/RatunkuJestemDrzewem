@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://bssvun7258ccp"]
+[gd_scene load_steps=75 format=3 uid="uid://bssvun7258ccp"]
 
 [ext_resource type="Script" path="res://OtherScripts/AnimationPlayer.gd" id="1_36a1c"]
 [ext_resource type="Script" path="res://OtherScripts/ButtonSun.gd" id="1_pbcqo"]
@@ -50,6 +50,9 @@
 [ext_resource type="Texture2D" uid="uid://cfgi6ep4cnke7" path="res://Assets/Weather/Cloud.png" id="42_goovd"]
 [ext_resource type="Script" path="res://OtherScripts/GrowRootText.gd" id="42_wd7t5"]
 [ext_resource type="Script" path="res://OtherScripts/GrowLeafText.gd" id="45_5w47a"]
+[ext_resource type="AudioStream" uid="uid://636fxkububkf" path="res://Music/drzewo.mp3" id="46_icfa7"]
+[ext_resource type="AudioStream" uid="uid://b8fbvhre21w1s" path="res://Music/sloncet.mp3" id="48_m0pp4"]
+[ext_resource type="Script" path="res://Scenes/Levels/AudioStreamPlayer2.gd" id="49_i0edd"]
 [ext_resource type="Script" path="res://OtherScripts/Narrative.gd" id="51_2bsok"]
 [ext_resource type="Texture2D" uid="uid://b4mvb1vyvrr2b" path="res://Assets/Tilesets/Droplet.png" id="52_7pwiv"]
 [ext_resource type="Texture2D" uid="uid://chnjhhvhkas4j" path="res://Assets/Tilesets/SunBeam.png" id="53_o6bee"]
@@ -66,7 +69,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-104, 208)]
+"values": [Vector2(-55, 193)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -147,10 +150,10 @@ tracks/0/path = NodePath("AnimationPlayer/PlaceholderSun:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.8, 10, 20, 25, 30, 35, 45, 55, 70),
+"times": PackedFloat32Array(0, 15, 19.2, 23.9, 28.1, 32.6, 38.9, 47, 57.2, 70),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-76, 228), Vector2(116, 128), Vector2(212, 100), Vector2(327, 71), Vector2(463, 64), Vector2(548, 65), Vector2(623, 65), Vector2(764, 88), Vector2(976, 164), Vector2(1255, 355)]
+"values": [Vector2(-130, 228), Vector2(116, 128), Vector2(212, 100), Vector2(327, 71), Vector2(463, 64), Vector2(548, 65), Vector2(623, 65), Vector2(764, 88), Vector2(976, 164), Vector2(1255, 355)]
 }
 
 [sub_resource type="Animation" id="Animation_t38p3"]
@@ -381,6 +384,97 @@ sources/0 = SubResource("TileSetAtlasSource_l2f8g")
 sources/1 = SubResource("TileSetAtlasSource_fn4c5")
 sources/2 = SubResource("TileSetAtlasSource_drm3c")
 
+[sub_resource type="Animation" id="Animation_eyrwc"]
+resource_name = "FadeToNormal"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(5.85634, 5.85634),
+"update": 0,
+"values": [-80.0, -20.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(5.65685, 5.65685),
+"update": 0,
+"values": [-20.0, -80.0]
+}
+
+[sub_resource type="Animation" id="Animation_g3qaj"]
+resource_name = "new_animation"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(5.65685, 5.46416),
+"update": 0,
+"values": [-20.0, -80.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(5.65685, 4.5948),
+"update": 0,
+"values": [-80.0, -20.0]
+}
+
+[sub_resource type="Animation" id="Animation_cui5m"]
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(6.06286),
+"update": 0,
+"values": [-20.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(5.65685),
+"update": 0,
+"values": [-80.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oduii"]
+_data = {
+"FadeToNormal": SubResource("Animation_eyrwc"),
+"FadeToSun": SubResource("Animation_g3qaj"),
+"RESET": SubResource("Animation_cui5m")
+}
+
 [node name="MyLevel" type="Node2D"]
 position = Vector2(0, -3)
 
@@ -392,7 +486,7 @@ speed_scale = 2.0
 script = ExtResource("1_36a1c")
 
 [node name="PlaceholderSun" type="Sprite2D" parent="AnimationPlayer"]
-position = Vector2(-104, 208)
+position = Vector2(-55, 193)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimationPlayer/PlaceholderSun"]
 z_index = -1
@@ -622,11 +716,6 @@ offset_bottom = 547.0
 text = "Upgrades 
 Your Flower."
 script = ExtResource("45_5w47a")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-script = ExtResource("5_m35lm")
-
-[node name="Timer" type="Timer" parent="AudioStreamPlayer"]
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -1
@@ -929,6 +1018,7 @@ wait_time = 3.0
 one_shot = true
 
 [node name="RootNotify" type="Label" parent="NotificationTimer"]
+visible = false
 offset_left = 368.0
 offset_top = 461.0
 offset_right = 933.0
@@ -937,12 +1027,40 @@ theme_override_font_sizes/font_size = 12
 text = "Your Upgrade Root cooldown will be reduced if you use it during this day!"
 
 [node name="LeafNotify" type="Label" parent="NotificationTimer"]
+visible = false
 offset_left = 369.0
 offset_top = 478.0
 offset_right = 931.0
 offset_bottom = 501.0
 theme_override_font_sizes/font_size = 12
 text = "Your Upgrade Leaf cooldown will be reduced if you use it during this day!"
+
+[node name="Music" type="Node2D" parent="."]
+visible = false
+position = Vector2(0, 3)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("46_icfa7")
+volume_db = -20.0
+autoplay = true
+script = ExtResource("5_m35lm")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("48_m0pp4")
+volume_db = -80.0
+autoplay = true
+script = ExtResource("49_i0edd")
+
+[node name="MusicPlayer" type="AnimationPlayer" parent="Music"]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_oduii")
+}
+
+[node name="MusicTimer" type="Timer" parent="Music"]
+wait_time = 10.0
+one_shot = true
+autostart = true
 
 [connection signal="animation_changed" from="AnimationPlayer" to="Narrative" method="_on_animation_player_animation_changed"]
 [connection signal="animation_started" from="AnimationPlayer" to="AnimationPlayer" method="_on_animation_started"]
@@ -979,3 +1097,7 @@ text = "Your Upgrade Leaf cooldown will be reduced if you use it during this day
 [connection signal="pressed" from="Sun6" to="ButtonSun" method="_on_sun_6_pressed"]
 [connection signal="timeout" from="NotificationTimer" to="ButtonRain" method="_on_notification_timer_timeout"]
 [connection signal="timeout" from="NotificationTimer" to="ButtonSun" method="_on_notification_timer_timeout"]
+[connection signal="finished" from="Music/AudioStreamPlayer" to="Music/AudioStreamPlayer" method="_on_finished"]
+[connection signal="finished" from="Music/AudioStreamPlayer2" to="Music/AudioStreamPlayer2" method="_on_finished"]
+[connection signal="timeout" from="Music/MusicTimer" to="Music/AudioStreamPlayer" method="_on_music_timer_timeout"]
+[connection signal="timeout" from="Music/MusicTimer" to="Music/AudioStreamPlayer2" method="_on_music_timer_timeout"]
